@@ -65,7 +65,7 @@ p {
   text-align: center;
 }
 
-img {
+.pokeIMG {
   height: 10rem;
   width: 12rem;
   padding: 1rem;
@@ -74,7 +74,7 @@ img {
   margin-right: auto;
 }
 
-img:hover {
+.pokeIMG:hover {
   animation-name: spin;
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
@@ -126,8 +126,10 @@ img:hover {
 }
 
 .chosenButton {
-  box-shadow: 1px 1px 1px 1px rgb(0 0 0 / 20%);
+  box-shadow: 1px 1px 1px 1px rgba(194, 194, 194, 0.5);
 }
+
+/* Search by type */
 
 .btn_type_search {
   height: 1rem;
@@ -175,6 +177,12 @@ img:hover {
   height: 30px;
   margin: 0;
   padding: 0;
+}
+
+.searchError {
+  color: white;
+  font-size: 1.2rem;
+  margin: 2rem;
 }
 
 #backToTop {

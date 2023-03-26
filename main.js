@@ -79,7 +79,7 @@ const creatingCards = (arrayPoke) => {
           <p>#${searchPokeId}</p>
         </div>
         <div class="pokeIMG">
-          <img src='${searchNamePicture}'</img>
+          <img class="pokeIMG" src='${searchNamePicture}'</img>
         </div> 
         <p class="pokeName">${searchNameResult}</p>
         <div class='typeIcons'>${typeElement}</div>
@@ -106,7 +106,7 @@ const searchPokeByName = () => {
     if (flag === 0) {
       document.querySelector(
         ".pokeCards"
-      ).innerHTML = `<h2>No such Pokemon in our DataBase. Try again!</h2>`;
+      ).innerHTML = `<h2 class="searchError">No such Pokemon in our DataBase. Try again!</h2>`;
     }
   }
 };
@@ -137,7 +137,7 @@ const searchByType = (indexFilter) => {
     if (flag === 0) {
       document.querySelector(
         ".pokeCards"
-      ).innerHTML = `<h2>No such Pokemon in our DataBase. Try again!</h2>`;
+      ).innerHTML = `<h2 class="searchError">No such Pokemon in our DataBase. Try again!</h2>`;
     }
   });
 };
