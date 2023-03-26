@@ -79,7 +79,7 @@ const creatingCards = (arrayPoke) => {
           <p>#${searchPokeId}</p>
         </div>
         <div class="pokeIMG">
-          <img class="pokeIMG" src='${searchNamePicture}'</img>
+          <img class="pokeSVG" src='${searchNamePicture}'</img>
         </div> 
         <p class="pokeName">${searchNameResult}</p>
         <div class='typeIcons'>${typeElement}</div>
@@ -112,7 +112,7 @@ const searchPokeByName = () => {
 };
 
 const searchByType = (indexFilter) => {
-  let chosenFilter = Object.keys(pokemonType)[indexFilter];
+  let chosenFilter = buttonFilter[indexFilter].value;
   let arrayPoke = [];
   let flag = 0;
   searchBar.value = "";
@@ -143,6 +143,7 @@ const searchByType = (indexFilter) => {
 };
 
 const clickButton = (i) => {
+  searchBar.value = "";
   for (let i = 0; i < pokeGeneration.length; i++) {
     btnClick[i].classList.remove("chosenButton");
   }
@@ -165,10 +166,6 @@ const addingTypePoke = (item) => {
   return typeElement;
 };
 
-window.onscroll = function () {
-  scrollFunction();
-};
-
 const scrollFunction = () => {
   if (
     document.body.scrollTop > 300 ||
@@ -186,6 +183,10 @@ const getToTop = () => {
 };
 
 searchPoke();
+
+window.onscroll = function () {
+  scrollFunction();
+};
 
 btnClick.forEach((button, i) =>
   button.addEventListener("click", () => setTimeout(clickButton(i), 3000))
